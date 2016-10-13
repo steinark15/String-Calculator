@@ -20,5 +20,13 @@ public class CalculatorTest {
 			assertEquals(3, Calculator.add("1,2"));
 		}
 
+		@Test
+		public void testAnySingleNumber() {
+			for (int i = 0; i < 10; i++) {
+				assertEquals(i, Calculator.add(Integer.toString(i)));
+			}
+
+		}
+
 
 }

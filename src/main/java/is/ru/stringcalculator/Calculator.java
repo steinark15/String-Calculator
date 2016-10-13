@@ -4,19 +4,31 @@ public class Calculator {
 
 	public static int add(String text) {
 
-		if(text.equals("")) {
-			return 0;
-		}
-		else if(text.contains(",")) {
-			 return getIntegersFromCommaString(text);
+		if(!text.equals("")) {
+
+				if(text.length() == 1) {
+					return stringToInt(text);
+				}
+
+				else if(text.contains(",")) {
+					 return getIntegersFromCommaString(text);
+				}
+				else {
+					return -1;
+				}
 		}
 		else {
-			return 1;
+			return 0;
 		}
-
+		
 	}
-  public static int getIntegersFromCommaString(String text) {
-		String arr[] = text.split(",");
+
+	private static String[] splitNumbers(String text) {
+		return text.split(",");
+	}
+
+  private static int getIntegersFromCommaString(String text) {
+		String arr[] = splitNumbers(text);
 		int sum = 0;
 		for(int i = 0; i < arr.length; i++) {
 				sum = sum + stringToInt(arr[i]);
@@ -24,7 +36,7 @@ public class Calculator {
 		return sum;
 	}
 
-	public static int stringToInt(String number) {
+	private static int stringToInt(String number) {
 		return Integer.parseInt(number);
 	}
 }
