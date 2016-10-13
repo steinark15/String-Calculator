@@ -5,29 +5,24 @@ public class Calculator {
 	public static int add(String text) {
 
 		if(!text.equals("")) {
-
-				if(text.length() == 1) {
-					return stringToInt(text);
-				}
-
-				else if(text.contains(",")) {
-					 return getIntegersFromCommaString(text);
-				}
-				else {
-					return -1;
-				}
+				return sumOfString(text);
 		}
 		else {
-			return 0;
+				return 0;
 		}
-		
+
 	}
 
 	private static String[] splitNumbers(String text) {
-		return text.split(",");
+		if (text.contains(",")) {
+			return text.split(",");
+		}
+		else {
+			return text.split("");
+		}
 	}
 
-  private static int getIntegersFromCommaString(String text) {
+  private static int sumOfString(String text) {
 		String arr[] = splitNumbers(text);
 		int sum = 0;
 		for(int i = 0; i < arr.length; i++) {

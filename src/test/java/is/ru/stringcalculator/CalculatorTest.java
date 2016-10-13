@@ -33,6 +33,13 @@ public class CalculatorTest {
 				assertEquals(11, Calculator.add("1,4,2,4"));
 		}
 
+		@Test
+		public void testSevenDigitWithoutComma() {
+				assertEquals(20, Calculator.add("1243244"));
+		}
+
+
+
 
 
 
