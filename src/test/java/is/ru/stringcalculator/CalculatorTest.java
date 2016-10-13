@@ -28,5 +28,12 @@ public class CalculatorTest {
 
 		}
 
+		@Test
+		public void testSevenDigitWithComma() {
+				assertEquals(11, Calculator.add("1,4,2,4"));
+		}
+
+
+
 
 }
