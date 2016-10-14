@@ -38,8 +38,14 @@ public class CalculatorTest {
 				assertEquals(24, Calculator.add("1\n23"));
 		}
 
-
-
+		@Test
+		public void testStringWithNegativeNumbers() {
+				try {
+					Calculator.add("-1,-2");
+				} catch (IllegalArgumentException e) {
+					assertEquals(e.getMessage(), "Negative numbers not allowed. Found: -1,-2");
+				}
+		}
 
 
 

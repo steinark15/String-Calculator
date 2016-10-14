@@ -5,11 +5,40 @@ public class Calculator {
 
 	public static int add(String text) {
 		if(!text.equals("")) {
+			if (containsNegative(splitNumbers(text))) {
+				throw new IllegalArgumentException("Negative numbers not allowed. Found: " + getNegativeNumbers(splitNumbers(text)));
+			}
 				return sumOfString(text);
 		}
 		else {
 				return 0;
 		}
+	}
+
+	private static boolean containsNegative(String[] arr) {
+		for (String number : arr) {
+			if (stringToInt(number) < 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private static String getNegativeNumbers(String[] arr) {
+		String negatives = "";
+		int counter = 0;
+		for(int i = 0; i < arr.length; i++) {
+				if (stringToInt(arr[i]) < 0) {
+					if(counter == 0) {
+						negatives = arr[i];
+						counter ++;
+					}
+					else {
+						negatives += "," + arr[i];
+					}
+			}
+		}
+		return negatives;
 	}
 
 //Converst string array into string
