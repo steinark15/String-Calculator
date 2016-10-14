@@ -38,6 +38,12 @@ public class CalculatorTest {
 				assertEquals(20, Calculator.add("1243244"));
 		}
 
+		@Test
+		public void testStringWithNewLines() {
+				assertEquals(6, Calculator.add("1\n23"));
+		}
+
+
 
 
 
