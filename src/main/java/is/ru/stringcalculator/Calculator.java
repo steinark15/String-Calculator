@@ -24,17 +24,13 @@ public class Calculator {
 	//Recursively removes , and \n from string text and returns string []
 	private static String[] splitNumbers(String text) {
 
-		if (text.contains(",")) {
-			text = stringArrayToString(text.split(","));
-			return splitNumbers(text);
-		}
-		else if (text.contains("\n")) {
-			text = stringArrayToString(text.split("\n"));
-			return splitNumbers(text);
+		if (text.contains("\n")) {
+			return text.split("\n");
 		}
 		else {
-			return text.split("");
+			return text.split(",");
 		}
+
 	}
 
 	//returns the sum of a clean string array
