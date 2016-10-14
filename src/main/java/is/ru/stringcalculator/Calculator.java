@@ -66,7 +66,9 @@ public class Calculator {
 	private static int sum(String[] arr) {
 		int sum = 0;
 		for(int i = 0; i < arr.length; i++) {
+			if(stringToInt(arr[i]) <= 1000) {
 				sum = sum + stringToInt(arr[i]);
+			}
 		}
 		return sum;
 	}
